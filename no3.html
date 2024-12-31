@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900">
-    <title>Document</title>
+    <title>Countdown Timer</title>
     <style>
 
 body{
@@ -81,9 +81,7 @@ body{
   left: 60%;
   top: 5%;
 
-
 }
-
 
     </style>
 </head>
@@ -92,7 +90,7 @@ body{
 <div id="timer">
 
     <div class="days"> 
-        <div id="days" class="numbers "> </div>days</div> 
+        <div id="days" class="numbers"> </div>days</div> 
       <div class="hours"> 
         <div  id="hours" class="numbers"> </div>hours</div> 
       <div class="minutes"> 
@@ -105,33 +103,30 @@ body{
 
 </body>
 <script>
-    const year = new Date().getFullYear();
-const myDate = new Date('Oct 1, 2023 00:00:00');
-console.log(myDate);
+    // Set the target date to December 31, 2025
+const myDate = new Date('Dec 31, 2025 00:00:00');
 
-// countdown
+// Countdown
 let timer = setInterval(function() {
 
-  // get today's date
+  // Get today's date
   const today = new Date().getTime();
 
-  // get the difference
+  // Get the difference
   const diff = myDate - today;
 
-  // math
+  // Math calculations
   let days = Math.floor(diff / (1000 * 60 * 60 * 24));
   let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-  // display
-  document.getElementById("days").innerHTML=days
-  document.getElementById("hours").innerHTML=hours
-  document.getElementById("minutes").innerHTML=minutes
-  document.getElementById("seconds").innerHTML=seconds
+  // Display the results
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
 
-
-
-}, 1);
+}, 1000);
 </script>
 </html>
